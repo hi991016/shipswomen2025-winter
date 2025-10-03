@@ -612,14 +612,19 @@
         padding: 7.639vw 3.056vw 7.569vw 0;
         width: fit-content;
         margin-left: auto;
+
+        img {
+          object-fit: contain;
+          object-position: right;
+        }
       }
 
       &.--camp9 {
         padding: 0 7.5vw 6.25vw 11.111vw;
 
         img {
-          object-position: bottom;
           object-fit: contain;
+          object-position: bottom;
         }
       }
 
@@ -647,14 +652,67 @@
 
         &.--camp7 {
           padding: 27.778vw 4.348vw 31.643vw 0;
-
-          img {
-            object-fit: contain;
-          }
         }
 
         &.--camp9 {
           padding: 0 17.15vw 15.217vw 26.57vw;
+        }
+      }
+    }
+
+    &_merge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+
+      &_wrap {
+        display: grid;
+        grid-template-columns: 1fr 47.083vw;
+        gap: 3.333vw;
+        height: 100%;
+      }
+
+      &_l {
+        picture {
+          img {
+            object-position: bottom;
+          }
+        }
+      }
+
+      &_r {
+        display: grid;
+        grid-template-columns: 1fr 61.947%;
+        padding-bottom: 65px;
+
+        picture:nth-of-type(1) {
+          img {
+            object-position: bottom;
+          }
+        }
+
+        picture:nth-of-type(2) {
+          img {
+            object-position: top;
+          }
+        }
+      }
+    }
+
+    @include minW(1024px) {
+      &_col {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        &_items {
+          position: relative;
+          width: 100%;
+          height: 100%;
         }
       }
     }
