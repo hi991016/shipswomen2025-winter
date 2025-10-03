@@ -140,9 +140,9 @@ const campaignSwiper = new Swiper("[data-campaign-swiper]", {
       // #
       sideLeft.classList.toggle(
         "--show",
-        sw.realIndex + 2 !== sw.slides.length
+        sw.realIndex + 3 !== sw.slides.length
       );
-      if (isMobile.matches && sw.realIndex + 2 === sw.slides.length) {
+      if (isMobile.matches && sw.realIndex + 3 === sw.slides.length) {
         sideLeft.classList.add("--classic");
         headingClassic.style.display = "block";
         headingDefault.style.display = "none";
