@@ -1,0 +1,141 @@
+/* Components
+------------------------------------------------------------*/
+
+.popup {
+  background: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 101;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+  transition: opacity 0.35s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+  &.--split {
+    width: 50%;
+  }
+
+  &.--show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  @include maxW {
+    width: 100% !important;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  &_close {
+    position: absolute;
+    top: 100px;
+    right: min(80px, 5.556vw);
+    cursor: pointer;
+    z-index: 1;
+
+    @include maxW {
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+      top: auto;
+      right: auto;
+      bottom: 20px;
+      left: 20px;
+    }
+  }
+
+  &_inner {
+    width: 100%;
+    height: 100%;
+    padding: 100px min(80px, 5.556vw);
+    overflow: auto;
+
+    @include maxW {
+      padding: 40px;
+      height: calc(100% - 69px);
+    }
+  }
+  
+  &_direction {
+    margin-top: 35px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+
+    &:first-child {
+      margin-top: initial;
+    }
+
+    @include maxW {
+      font-size: 1.2rem;
+    }
+  }
+
+  &_list {
+    li {
+      margin-bottom: 20px;
+
+      h2 {
+        font-size: 1.2rem;
+        line-height: 1.3;
+        font-weight: 500;
+      }
+
+      a {
+        display: block;
+        width: 56px;
+        height: 20px;
+        font-size: 1.3rem;
+        font-weight: 500;
+        line-height: 18px;
+        text-align: center;
+        color: var(--black-cl);
+        border-radius: 20px;
+        border: 1px solid var(--black-cl);
+        margin-top: 7px;
+        transition: all 0.2s linear;
+        font-family: "futura-pt", sans-serif;
+
+        &:hover {
+          background-color: #002f51;
+          border: 1px solid #002f51;
+          color: #fff;
+          opacity: 1;
+        }
+
+        &.--disable {
+          pointer-events: none;
+          background-color: transparent;
+          border: 1px solid #bebebe;
+          color: #bebebe;
+        }
+      }
+
+      @include maxW {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+
+        h2 {
+          width: 75%;
+          font-size: 1.4rem;
+        }
+
+        a {
+          margin-top: 0;
+          width: 70px;
+          height: 25px;
+          line-height: 22px;
+          font-size: 1.6rem;
+          background-color: #002f51;
+          border: 1px solid #002f51;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

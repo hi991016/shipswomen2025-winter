@@ -1,0 +1,41 @@
+/* Utils
+------------------------------------------------------------*/
+
+/* fade */
+[data-fade] {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+/* lazy load */
+main img {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+
+  &:not([src]) {
+    visibility: hidden;
+  }
+
+  &.initial,
+  &.loaded,
+  &.error {
+    opacity: 1;
+  }
+}
+
+/* only device */
+.sp-only,
+.is-hidden {
+  display: none !important;
+}
+
+@include maxW {
+  .pc-only {
+    display: none !important;
+  }
+
+  .sp-only {
+    display: block !important;
+  }
+}
