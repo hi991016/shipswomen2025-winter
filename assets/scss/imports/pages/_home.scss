@@ -520,10 +520,6 @@
         background: #740101;
       }
 
-      &.--start {
-        align-items: flex-start;
-      }
-
       @include maxW {
         display: flex;
         align-items: center;
@@ -533,8 +529,8 @@
 
     &_heading {
       position: absolute;
-      top: 55%;
-      left: 50px;
+      top: 32%;
+      left: 20px;
       transform: translateY(-50%);
       z-index: 10;
 
@@ -608,17 +604,22 @@
         padding: 0 5.486vw;
       }
 
+      &.--camp3 {
+        padding: 4.514vw 0 6.528vw;
+      }
+
       &.--camp7 {
-        padding: 7.639vw 0;
+        padding: 7.639vw 3.056vw 7.569vw 0;
         width: fit-content;
+        margin-left: auto;
       }
 
       &.--camp9 {
-        padding-right: 7.639vw;
+        padding: 0 7.5vw 6.25vw 11.111vw;
 
         img {
+          object-position: bottom;
           object-fit: contain;
-          object-position: top;
         }
       }
 
@@ -635,8 +636,17 @@
           }
         }
 
+        &.--camp3 {
+          padding: 21.981vw 14.976vw 0 0;
+
+          img {
+            object-fit: contain;
+            object-position: top;
+          }
+        }
+
         &.--camp7 {
-          padding: 17.633vw 27.536vw 0 0;
+          padding: 27.778vw 4.348vw 31.643vw 0;
 
           img {
             object-fit: contain;
@@ -644,47 +654,7 @@
         }
 
         &.--camp9 {
-          padding-right: 11.111vw;
-        }
-      }
-    }
-
-    &_camp10 {
-      &_wrap {
-        display: grid;
-        grid-template-columns: 39.568% 1fr;
-        gap: 28px;
-        padding-top: 9.028vw;
-        padding-right: 20px;
-
-        picture {
-          img {
-            object-position: top;
-            object-fit: contain;
-          }
-        }
-      }
-
-      &_cl {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 26.389%;
-        background-color: #745330;
-        z-index: -1;
-      }
-
-      @include maxW {
-        &_wrap {
-          grid-template-columns: 36.232% 1fr;
-          gap: 10px;
-          padding-top: 24.155vw;
-          padding-right: 0;
-        }
-
-        &_cl {
-          width: 21.739%;
+          padding: 0 17.15vw 15.217vw 26.57vw;
         }
       }
     }
